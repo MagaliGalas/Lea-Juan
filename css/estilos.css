@@ -89,7 +89,7 @@
 
 /* Imagen Home (BEM) */
 .estiloHome__img {
-  background-image: url(/multimedia/home/foto-index-2.jpg);
+  background-image: url(../multimedia/home/foto-index-2.jpg);
   background-color: #D6B48F;
   z-index: -10;
   background-position: center;
