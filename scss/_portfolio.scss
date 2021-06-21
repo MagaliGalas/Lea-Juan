@@ -1,0 +1,74 @@
+/* Portfolio (BEM) */
+.portfolio{
+    padding-top: 120px;
+    padding-bottom: 5%;
+}
+
+/* Contenedor de Cada Portfolio (BEM) */
+.portfolio__contenedor{ 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 350px;
+    height: 350px;
+    border-style: none;
+}
+
+/* Opacidad Imagen Portada Portfolio (BEM) */
+.portfolio__imagen{ 
+    filter: grayscale(100%) opacity(50%);
+    border-radius: 50%;
+    transition: filter 1s;
+    transition: transform 1s;
+}
+
+/* Modifica Imagen (BEM) */
+.portfolio section:hover img{
+    transform: scale(1.1, 1.1);  
+    filter: grayscale(0%);
+    transition: filter 1s;
+    transition: transform 1s;
+}
+
+/* Modifica Texto (BEM) */
+.portfolio section article{
+    transition: transform 1s;
+}
+
+/* Modifica Texto (BEM) */
+.portfolio section:hover article{
+    color: $azul;
+    transform: translateY(70%);
+    transition: transform 1s;
+}
+
+/* Sin Borde (BEM) */
+.card{ 
+    border-style: none;
+}
+
+/* Texto Encima (BEM) */
+.card__Texto{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $azul;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: transparent;
+    z-index: 100;
+}
+
+/* Portada de la Galeria */
+.tz-gallery img { 
+    height: 100%;
+}
+
+/* No mostrar fotos de la galeria */
+.tz-gallery a { 
+    display: none;
+}
+
+/* Mostrar solo la foto de portada */
+.tz-gallery a.mostrar{ 
+  display: inline-block;
+}
