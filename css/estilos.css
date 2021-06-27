@@ -239,196 +239,134 @@ a.servicios__botonModal:hover {
 .tz-gallery a.mostrar {
   display: inline-block; }
 
-/* Media Queries */
-/* Constantes */
-/* Tamaño Cards */
-/* Colors */
-/* Calculations */
-/* Placeholders */
-@media (min-width: 1000px) {
-  #timeline .demo-card:nth-child(odd) .head::after, #timeline .demo-card:nth-child(even) .head::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent; }
-  #timeline .demo-card:nth-child(odd) .head::before, #timeline .demo-card:nth-child(even) .head::before {
-    position: absolute;
-    content: "";
-    width: 9px;
-    height: 9px;
-    background-color: #bdbdbd;
-    border-radius: 9px;
-    box-shadow: 0px 0px 2px 8px #F4EEE8; } }
+/* Proximos Cursos */
+.proxCursos {
+  margin-top: 8%; }
 
-/* Some Cool Stuff */
-.demo-card:nth-child(1) {
-  order: 1; }
+.proxCursos__texto {
+  font-size: 4rem;
+  text-shadow: 9.91px 9.91px 15px #d1d2d3, -9.91px -9.91px 15px #fff; }
 
-.demo-card:nth-child(2) {
-  order: 4; }
+/* Cursos General */
+.cursos {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
-.demo-card:nth-child(3) {
-  order: 2; }
+/* Cursos Filas */
+.cursos__fila {
+  margin-bottom: 5%;
+  display: flex;
+  width: 80%;
+  height: 300px;
+  justify-content: space-evenly; }
 
-.demo-card:nth-child(4) {
-  order: 5; }
+/* Cursos Imagenes */
+.cursos__contenedor__img {
+  width: 40%;
+  height: 100%; }
 
-.demo-card:nth-child(5) {
-  order: 3; }
+.cursos__contenedor__1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-flash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%; }
 
-.demo-card:nth-child(6) {
-  order: 6; }
+.cursos__contenedor__2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-fotografia.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%; }
 
-Border Box * {
-  box-sizing: border-box; }
+.cursos__contenedor__3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-nweborn.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%; }
 
-Fonts body {
-  font-family: Roboto; }
+.cursos__contenedor__4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-photoshop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%; }
 
-#timeline {
-  padding: 5%;
-  background: #F4EEE8; }
-  #timeline h1 {
+/* Cursos Contenedor */
+.cursos__caja {
+  background-color: #F4EEE8;
+  box-shadow: 9.91px 9.91px 15px #d1d2d3, -9.91px -9.91px 15px #fff;
+  border-radius: 2%;
+  margin: 0px 10px;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; }
+
+/* Cursos Titulo */
+.cursos__titulo {
+  text-align: center;
+  color: #222222;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: transparent; }
+
+/* Cursos Descripción */
+.cursos__parrafo {
+  background-color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #222222; }
+
+/* Boton */
+.cursos__boton {
+  color: #222222;
+  background-color: #FFE268;
+  align-self: center;
+  margin-bottom: 5%; }
+
+a.cursos__boton:hover {
+  transform: scale(1.1, 1.1);
+  transition: filter 1s;
+  transition: transform 1s; }
+
+@media screen and (max-width: 780px) {
+  .cursos {
+    height: auto; }
+  .cursos__fila {
+    flex-direction: column;
+    width: 80%;
+    height: auto; }
+  .cursos__contenedor__img {
+    float: left;
+    width: 100%;
+    height: 20em;
+    z-index: 1; }
+    .cursos__contenedor__img > div {
+      height: 100%;
+      width: 100%; }
+  .cursos__caja {
+    float: left;
+    width: 100%;
+    margin: 0px; }
+  .proxCursos__texto {
     text-align: center;
-    font-size: 3rem;
-    font-weight: 200;
-    margin-bottom: 20px; }
-  #timeline h3 {
-    font-size: 700rem; }
-  #timeline p.leader {
-    text-align: center;
-    max-width: 90%;
-    margin: auto;
-    margin-bottom: 45px; }
-  #timeline .demo-card-wrapper {
-    /*Caja Cursos*/
-    position: relative;
-    margin: auto; }
-    @media (min-width: 1000px) {
-      #timeline .demo-card-wrapper {
-        display: flex;
-        flex-flow: column wrap;
-        width: 1170px;
-        height: 1650px;
-        margin: 0 auto; } }
-    #timeline .demo-card-wrapper::after {
-      z-index: 1;
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%; }
-      @media (min-width: 1000px) {
-        #timeline .demo-card-wrapper::after {
-          border-left: 1px solid #bdbdbd; } }
-  #timeline .demo-card {
-    position: relative;
-    display: block;
-    margin: 10px auto 80px;
-    max-width: 94%;
-    z-index: 2; }
-    @media (min-width: 480px) {
-      #timeline .demo-card {
-        max-width: 60%;
-        box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07); } }
-    @media (min-width: 720px) {
-      #timeline .demo-card {
-        max-width: 40%; } }
-    @media (min-width: 1000px) {
-      #timeline .demo-card {
-        max-width: 450px;
-        height: 400px;
-        margin: 90px;
-        margin-top: 45px;
-        margin-bottom: 45px; }
-        #timeline .demo-card:nth-child(odd) {
-          margin-right: 45px; }
-          #timeline .demo-card:nth-child(odd) .head::after {
-            border-left-width: 15px;
-            border-left-style: solid;
-            left: 100%; }
-          #timeline .demo-card:nth-child(odd) .head::before {
-            left: 491.5px; }
-        #timeline .demo-card:nth-child(even) {
-          margin-left: 45px; }
-          #timeline .demo-card:nth-child(even) .head::after {
-            border-right-width: 15px;
-            border-right-style: solid;
-            right: 100%; }
-          #timeline .demo-card:nth-child(even) .head::before {
-            right: 489.5px; }
-        #timeline .demo-card:nth-child(2) {
-          margin-top: 180px; } }
-    #timeline .demo-card .head {
-      position: relative;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      font-weight: 400; }
-      #timeline .demo-card .head .number-box {
-        display: inline;
-        float: left;
-        margin: 15px;
-        padding: 10px;
-        font-size: 35px;
-        line-height: 35px;
-        font-weight: 600;
-        background: rgba(0, 0, 0, 0.17); }
-      #timeline .demo-card .head h2 {
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        font-weight: inherit;
-        letter-spacing: 2px;
-        margin: 0;
-        padding-bottom: 6px;
-        line-height: 1rem; }
-        @media (min-width: 480px) {
-          #timeline .demo-card .head h2 {
-            font-size: 165%;
-            line-height: 1.2rem; } }
-        #timeline .demo-card .head h2 span {
-          display: block;
-          font-size: 0.6rem;
-          margin: 0; }
-          @media (min-width: 480px) {
-            #timeline .demo-card .head h2 span {
-              font-size: 0.8rem; } }
-    #timeline .demo-card .body {
-      background: #fff;
-      border-top: 0;
-      padding: 15px; }
-      @media (min-width: 1000px) {
-        #timeline .demo-card .body {
-          height: 315px; } }
-      #timeline .demo-card .body p {
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: 15px; }
-      #timeline .demo-card .body img {
-        display: block;
-        width: 100%; }
-    #timeline .demo-card--step1 {
-      background-color: #46b8e9; }
-      #timeline .demo-card--step1 .head::after {
-        border-color: #46b8e9; }
-    #timeline .demo-card--step2 {
-      background-color: #3ee9d1; }
-      #timeline .demo-card--step2 .head::after {
-        border-color: #3ee9d1; }
-    #timeline .demo-card--step3 {
-      background-color: #ce43eb; }
-      #timeline .demo-card--step3 .head::after {
-        border-color: #ce43eb; }
-    #timeline .demo-card--step4 {
-      background-color: #4d92eb; }
-      #timeline .demo-card--step4 .head::after {
-        border-color: #4d92eb; }
-    #timeline .demo-card--step5 {
-      background-color: #46b8e9; }
-      #timeline .demo-card--step5 .head::after {
-        border-color: #46b8e9; }
+    margin-top: 10%; } }
 
 /* Formulario de Contacto (BEM) */
 .formulario {

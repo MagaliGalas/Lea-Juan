@@ -1,266 +1,151 @@
-/* Media Queries */
+/* Proximos Cursos */
+.proxCursos{
+  margin-top: 8%;
+}
 
-@mixin mq-xs {
-  @media (min-width: 320px) {
-    @content;
+.proxCursos__texto{
+  font-size: 4rem;
+  text-shadow: 9.91px 9.91px 15px #d1d2d3, -9.91px -9.91px 15px #fff;
+}
+
+/* Cursos General */
+.cursos{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cursos Filas */
+.cursos__fila{
+  margin-bottom: 5%;
+  display: flex;
+  width: 80%;
+  height: 300px;
+  justify-content: space-evenly;
+}
+
+/* Cursos Imagenes */
+.cursos__contenedor__img {
+  width: 40%;
+  height: 100%;
+}
+
+.cursos__contenedor__1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-flash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%;
+}
+
+.cursos__contenedor__2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-fotografia.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%;
+}
+
+.cursos__contenedor__3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-nweborn.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%;
+}
+
+.cursos__contenedor__4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../multimedia/cursos/curso-photoshop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2%;
+}
+
+/* Cursos Contenedor */
+.cursos__caja{
+  background-color: $beige;
+  box-shadow: 9.91px 9.91px 15px #d1d2d3, -9.91px -9.91px 15px #fff;
+  border-radius: 2%;
+  margin: 0px 10px;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cursos Titulo */
+.cursos__titulo{
+  text-align: center;
+  color: $negro;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+/* Cursos Descripción */
+.cursos__parrafo{
+  background-color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: $negro
+}
+
+/* Boton */
+.cursos__boton{
+  color: $negro;
+  background-color: $amarillo;
+  align-self: center;
+  margin-bottom: 5%;
+}
+
+a.cursos__boton:hover{
+  transform: scale(1.1, 1.1);
+  transition: filter 1s;
+  transition: transform 1s;
+}
+
+@media screen and (max-width:780px) {
+  .cursos{
+    height: auto;
   }
-}
-
-@mixin mq-sm {
-  @media (min-width: 480px) {
-    @content;
+  .cursos__fila{
+    flex-direction: column;
+    width: 80%;
+    height: auto;
   }
-}
-
-@mixin mq-md {
-  @media (min-width: 720px) {
-    @content;
+  .cursos__contenedor__img {
+    float: left;
+    width: 100%;
+    height: 20em;
+    z-index: 1;
+    > div{
+      height: 100%;
+      width: 100%;
+    }
   }
-}
 
-@mixin mq-lg {
-  @media (min-width: 1000px) {
-    @content;
-  }
-}
+  .cursos__caja{
+    float: left;
+    width: 100%;
+    margin: 0px;
+  } 
 
-/* Constantes */
-//$background: #f7f7f7;
-$box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
-//$border: 1px solid rgba(191, 191, 191, 0.4);
-$items: 5;
-$rows: ceil($items/2);
-
-/* Tamaño Cards */
-
-$card-height: 400px;
-$card-width: 450px;
-$inner-margin: 15px;
-$number-size: 35px;
-$stagger: 180px;
-$outer-margin: 90px;
-$marker-size: 9px;
-
-/* Colors */
-
-$steps: #46b8e9;
-$colors: #46b8e9,
-#3ee9d1,
-#ce43eb,
-#4d92eb;
-$timeline: #bdbdbd;
-
-/* Calculations */
-
-$container-height: $rows * ($card-height + $outer-margin) + $stagger;
-$container-width: $card-width*2 + $outer-margin*3;
-$head-height: $number-size + 50;
-$body-height: $card-height - $head-height;
-$marker-dist: $card-width + $outer-margin/2 - $marker-size/2;
-
-/* Placeholders */
-
-@include mq-lg {
-  %arrow {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-  }
-  %marker {
-    position: absolute;
-    content: "";
-    width: $marker-size;
-    height: $marker-size;
-    background-color: $timeline;
-    border-radius: $marker-size;
-    box-shadow: 0px 0px 2px 8px $beige;
-  }
-}
-
-
-
-/* Some Cool Stuff */
-
-$counter: $items - $rows + 2;
-@for $i from 1 through $rows {
-  .demo-card:nth-child(#{$i*2-1})   { order: $i }
-  .demo-card:nth-child(#{$i*2})     { order: $counter }
-  $counter: $counter + 1;
-}
-
-
- Border Box 
-* {
-  box-sizing: border-box;
-}
-
-
-Fonts 
-body {
-  font-family: Roboto;
-}
-
-
-#timeline {
-  padding: 5%;
-  background: $beige;
-
-  h1{
+  .proxCursos__texto{
     text-align: center;
-    font-size: 3rem;
-    font-weight: 200;
-    margin-bottom: 20px;
-  }
-
-  h3{
-    font-size: 700rem;
-  }
-  
-  p.leader {
-    text-align: center;
-    max-width: 90%;
-    margin: auto;
-    margin-bottom: 45px;
-  }
-  .demo-card-wrapper {  /*Caja Cursos*/
-    position: relative;
-    margin: auto;
-    @include mq-lg {
-      display: flex;
-      flex-flow: column wrap;
-      width: $container-width;
-      height: $container-height;
-      margin: 0 auto;
-    }
-    &::after {
-      z-index: 1;
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      
-      @include mq-lg {
-        border-left: 1px solid $timeline;
-      }
-    }
-  }
-  .demo-card {
-    position: relative;
-    display: block;
-    margin: 10px auto 80px;
-    max-width: 94%;
-    z-index: 2;
-    @include mq-sm {
-      max-width: 60%;
-      box-shadow: $box-shadow;
-    }
-    @include mq-md {
-      max-width: 40%;
-    }
-    @include mq-lg {
-      max-width: $card-width;
-      height: $card-height;
-      margin: $outer-margin;
-      margin-top: $outer-margin/2;
-      margin-bottom: $outer-margin/2;
-      &:nth-child(odd) {
-        margin-right: $outer-margin/2;
-        .head::after {
-          @extend %arrow;
-          border-left-width: 15px;
-          border-left-style: solid;
-          left: 100%;
-        }
-        .head::before {
-          @extend %marker;
-          left: $marker-dist + 1;
-        }
-      }
-      &:nth-child(even) {
-        margin-left: $outer-margin/2;
-        .head::after {
-          @extend %arrow;
-          border-right-width: 15px;
-          border-right-style: solid;
-          right: 100%;
-        }
-        .head::before {
-          @extend %marker;
-          right: $marker-dist - 1;
-        }
-      }
-      &:nth-child(2) {
-        margin-top: $stagger;
-      }
-    }
-    .head {
-      position: relative;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      font-weight: 400;
-      .number-box {
-        display: inline;
-        float: left;
-        margin: $inner-margin;
-        padding: 10px;
-        font-size: $number-size;
-        line-height: $number-size;
-        font-weight: 600;
-        background: rgba(0, 0, 0, 0.17);
-      }
-      h2 {
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        font-weight: inherit;
-        letter-spacing: 2px;
-        margin: 0;
-        padding-bottom: 6px;
-        line-height: 1rem;
-        @include mq-sm {
-          font-size: 165%;
-          line-height: 1.2rem;
-        }
-        span {
-          display: block;
-          font-size: 0.6rem;
-          margin: 0;
-          @include mq-sm {
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
-    .body {
-      background: #fff;
-      
-      border-top: 0;
-      padding: $inner-margin;
-      @include mq-lg {
-        height: $body-height;
-      }
-      p {
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: $inner-margin;
-      }
-      img {
-        display: block;
-        width: 100%;
-      }
-    }
-    @for $i from 1 through $items {
-      &--step#{$i} {
-        $color: nth($colors, ((($i - 1) % 4) + 1));
-        background-color: $color;
-        .head::after {
-          border-color: $color;
-        }
-      }
-    }
+    margin-top: 10%;
   }
 }
